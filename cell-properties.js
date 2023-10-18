@@ -16,6 +16,7 @@ for (i = 0; i < rows; i++) {
       bgColor: "#000000",
       value:"",
       formula:"",
+      childrens : [],
     };
     sheetRow.push(cellProp);
   }
@@ -202,6 +203,10 @@ function addListenToAttachedCellProperties(cell) {
         right.style.backgroundColor = activeColorProp;
         break;
     }
+
+    let formulaBar = document.querySelector(".formula-bar")
+    formulaBar.value = cellProp.value
+    cell.value = cellProp.value
   });
 }
 
